@@ -1,7 +1,8 @@
 # Termux
 pkg install git 
 
-git clone https://raw.githubusercontent.com/LiLGun-X/Termux/main/setkey
+
+git clone https://github.com/LiLGun-X/Termux.git
 
 chmod +x setkey
 
