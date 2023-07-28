@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# ฟังก์ชันสำหรับสร้าง alias ของสคริปต์
+create_ssh_alias() {
+    if [[ -z "$username" || -z "$VPS_IP" ]]; then
+        echo "Error: Please provide both 'username' and 'VPS_IP'."
+        exit 1
+    fi
+
+    echo "alias a='ssh $username@$VPS_IP'" > $HOME/.my_ssh_alias
+    source $HOME/.my_ssh_alias
+    echo "Alias 'a' for SSH to VPS has been created."
+}
+
+# รับค่า username และ VPS_IP จากผู้ใช้
+read -p "Enter your username: " username
+read -p "Enter your VPS IP address: " VPS_IP
+
+# เรียกใช้ฟังก์ชันสร้าง alias ของสคริปต์
+create_ssh_alias
